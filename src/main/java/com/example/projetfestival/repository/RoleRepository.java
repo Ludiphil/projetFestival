@@ -1,7 +1,7 @@
-package com.example.projetfestival;
+package com.example.projetfestival.repository;
 
+import com.example.projetfestival.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.example.projetfestival.Role;
 
 import java.util.Optional;
 

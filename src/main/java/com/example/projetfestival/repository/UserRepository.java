@@ -1,12 +1,9 @@
+package com.example.projetfestival.repository;
 
 
-package com.example.projetfestival;
-
-import com.example.projetfestival.User;
+import com.example.projetfestival.entity.User;
 import org.springframework.data.domain.Example;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.Optional;
 
 import java.util.Optional;
 

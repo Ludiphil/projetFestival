@@ -1,8 +1,4 @@
-package com.example.projetfestival;
-
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
+package com.example.projetfestival.entity;
 
 import lombok.Getter;
 import lombok.Setter;

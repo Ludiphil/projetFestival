@@ -1,4 +1,4 @@
-package com.example.projetfestival;
+package com.example.projetfestival.entity;
 
 import lombok.Data;
 
@@ -8,11 +8,11 @@ import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "user", uniqueConstraints = {
+@Table(name = "user",schema = "myapp", uniqueConstraints = {
         @UniqueConstraint(columnNames = {"username"}),
         @UniqueConstraint(columnNames = {"email"})
 })
-public class User{
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

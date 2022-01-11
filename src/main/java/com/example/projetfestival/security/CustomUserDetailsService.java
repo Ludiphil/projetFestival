@@ -1,16 +1,23 @@
-package com.example.projetfestival;
+package com.example.projetfestival.security;
 
+import com.example.projetfestival.entity.Role;
+import com.example.projetfestival.entity.User;
+import com.example.projetfestival.entity.User;
+import com.example.projetfestival.repository.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public abstract class CustomUserDetailsService implements UserDetailsService {
+@Service
+public class CustomUserDetailsService implements UserDetailsService {
+
     private UserRepository userRepository;
 
     public CustomUserDetailsService(UserRepository userRepository) {
@@ -26,7 +33,7 @@ public abstract class CustomUserDetailsService implements UserDetailsService {
                 user.getPassword(), mapRolesToAuthorities(user.getRoles()));
     }
 
-    public Collection< ? extends GrantedAuthority> mapRolesToAuthorities(Set<Role> roles){
+    private Collection< ? extends GrantedAuthority> mapRolesToAuthorities(Set<Role> roles){
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
     }
 }
