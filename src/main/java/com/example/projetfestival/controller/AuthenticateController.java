@@ -51,7 +51,7 @@ public class AuthenticateController {
         AdminAuthImpl adminImpl = (AdminAuthImpl) authentication.getPrincipal();
 
         String jwt = jwtUtils.generateJwtToken(adminImpl.getUsername());
-
+        System.out.println(email+password);
         return ResponseEntity.ok(new JwtResponse(jwt));
     }
 
